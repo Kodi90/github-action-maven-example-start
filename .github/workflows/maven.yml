@@ -37,4 +37,4 @@ jobs:
           mkdir .m2
           mvn clean install -Dmaven.repo.local=.m2/repository
           mvn -B package --file pom.xml
-          ls
+          ls .m2
