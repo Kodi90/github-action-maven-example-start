@@ -34,7 +34,7 @@ jobs:
     #     key: ${{ runner.os }}-m2-${{ hashfiles('**/pom.xml') }}
     - name: Build with Maven
       run: |
-          mvn clean install
+          mkdir .m2
+          mvn clean install -Dmaven.repo.local=.m2/repository
           mvn -B package --file pom.xml
-          cd /home/runner/.m2/repository/org/kth/github-action-maven-tutorial/1.0-SNAPSHOT/
-          ls
+          ls -R .m2/repository
