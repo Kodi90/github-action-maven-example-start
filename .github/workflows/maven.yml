@@ -27,11 +27,12 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Cache the maven
-      uses: actions/cache@v1
-      with:
-        path: ~/.m2
-        key: ${{ runner.os }}-m2-${{ hashfiles('**/pom.xml') }}
+    # - name: Cache the maven
+    #   uses: actions/cache@v1
+    #   with:
+    #     path: ~/.m2
+    #     key: ${{ runner.os }}-m2-${{ hashfiles('**/pom.xml') }}
     - name: Build with Maven
       run: |
+          mvn clean install
           mvn -B package --file pom.xml
