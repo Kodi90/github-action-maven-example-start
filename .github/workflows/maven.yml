@@ -35,5 +35,3 @@ jobs:
     - name: Build with Maven
       run: |
           mvn -B package --file pom.xml
-          echo M2=~/.m2
-          M2
